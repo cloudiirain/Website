@@ -1,6 +1,4 @@
 #!usr/bin/python
 
-from app import db
-from models import user, series, chapter
-
-db.create_all()
+from database import init_db
+init_db()

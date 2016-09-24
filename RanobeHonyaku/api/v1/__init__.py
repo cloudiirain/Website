@@ -1,13 +1,13 @@
 from flask import Blueprint, redirect, jsonify
 from flask_restful import Api
 
-from api.v1.resources.series import Series, SeriesList
+from api.v1.resources.series import SeriesDetail, SeriesList
 from utils import setup_file
 
 # Set up Flast-RESTful and add resources
 api_v1 = Blueprint("api", __name__, url_prefix="/api/v1")
 api = Api(api_v1)
-# api.add_resource(Series, "/series")
+api.add_resource(SeriesDetail, "/series/<int:series_id>")
 api.add_resource(SeriesList, "/series")
 
 
