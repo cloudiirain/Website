@@ -7,7 +7,7 @@ from RanobeHonyaku.utils import setup_file
 # Set up Flask-RESTful and add resources
 api_v1 = Blueprint("api", __name__, url_prefix="/api/v1")
 api = Api(api_v1)
-api.add_resource(SeriesDetail, "/series/<series_id>")
+api.add_resource(SeriesDetail, "/series/<int:series_id>")
 api.add_resource(SeriesList, "/series")
 
 
