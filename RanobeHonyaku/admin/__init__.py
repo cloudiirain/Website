@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-from utils import setup_file
+from RanobeHonyaku.utils import setup_file
 
 admin = Blueprint("admin", __name__, url_prefix="/admin")
 

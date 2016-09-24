@@ -1,8 +1,8 @@
 from flask import Blueprint, redirect, jsonify
 from flask_restful import Api
 
-from api.v1.resources.series import Series, SeriesList
-from utils import setup_file
+from RanobeHonyaku.api.v1.resources.series import Series, SeriesList
+from RanobeHonyaku.utils import setup_file
 
 # Set up Flast-RESTful and add resources
 api_v1 = Blueprint("api", __name__, url_prefix="/api/v1")

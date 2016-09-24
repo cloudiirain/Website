@@ -1,17 +1,37 @@
-from flask import Blueprint, render_template
+from flask import render_template
 
-from utils import setup_file, apps
+from RanobeHonyaku.utils import setup_file, apps
+from RanobeHonyaku import app
 
-home = Blueprint("home", __name__)
+
+# Our error handlers
+@app.errorhandler(404)
+def error_404_not_found(e):
+    return render_template("error.html", setup_file=setup_file, error=e)
+
+
+@app.errorhandler(401)
+def error_401_unauthorized(e):
+    return render_template("error.html", setup_file=setup_file, error=e)
+
+
+@app.errorhandler(500)
+def error_500_server_error(e):
+    return render_template("error.html", setup_file=setup_file, error=e)
+
+
+@app.errorhandler(403)
+def error_403_forbidden(e):
+    return render_template("error.html", setup_file=setup_file, error=e)
 
 
 # The root of the domain
-@home.route(rule="/")
+@app.route(rule="/")
 def index():
     return render_template("home.html", setup_file=setup_file)
 
 
 # The route for our page of approved applications
-@home.route(rule="/applications")
+@app.route(rule="/applications")
 def applications():
     return render_template("applications.html", setup_file=setup_file, applications=apps)

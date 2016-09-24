@@ -1,5 +1,5 @@
 import os
-from utils import setup_file
+from RanobeHonyaku.utils import setup_file
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 

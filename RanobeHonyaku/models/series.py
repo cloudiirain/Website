@@ -1,4 +1,4 @@
-from app import db
+from RanobeHonyaku.database import db
 
 class Series(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -6,8 +6,6 @@ class Series(db.Model):
 
     chapters = db.relationship("Chapter", backref="series", lazy="dynamic")
 
-    def __init__(self, title):
-        self.title = title
 
     def __repr__(self):
         return '<Series %r>' % self.title
