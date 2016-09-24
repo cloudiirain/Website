@@ -6,5 +6,7 @@ The Ranobe-Honyaku website source code.
 * pip install -r requirements.txt
 * Make sure you have a setup.json -- copy setup_example.json if you don't have one
 * Make sure you have a config.py -- copy config_example.py if you don't have one
-* Run db_create.py (Database is not working right now! Can still serve the website though)
-* Run runserver.py to start the server
+* If you have no migrations folder, run manage.py db init
+* If databases models have changed run "manage.py db migrate"
+* If your database file does not exist or migrations have not been applied, run "manage.py db upgrade"
+* Run manage.py runserver to start server

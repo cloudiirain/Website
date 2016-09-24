@@ -1,13 +1,13 @@
 from flask import Blueprint, redirect, jsonify
 from flask_restful import Api
 
-from RanobeHonyaku.api.v1.resources.series import Series, SeriesList
+from RanobeHonyaku.api.v1.resources.series import SeriesDetail, SeriesList
 from RanobeHonyaku.utils import setup_file
 
-# Set up Flast-RESTful and add resources
+# Set up Flask-RESTful and add resources
 api_v1 = Blueprint("api", __name__, url_prefix="/api/v1")
 api = Api(api_v1)
-# api.add_resource(Series, "/series")
+api.add_resource(SeriesDetail, "/series/<series_id>")
 api.add_resource(SeriesList, "/series")
 
 
@@ -18,6 +18,8 @@ def root():
 
 
 # Our class for API errors to raise so we can catch it with our error_handler function
+# Note that this currently isn't being used - Flask-RESTful can catch its own errors, but it should
+# be possible to manually throw errors if that was what you were going for
 class APIError(Exception):
 
     def __init__(self, message: str, status_code: int):

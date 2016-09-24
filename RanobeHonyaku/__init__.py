@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_migrate import Migrate
 
 from RanobeHonyaku.database import db
 from RanobeHonyaku.api.v1 import api_v1
@@ -8,6 +9,9 @@ app = Flask("RanobeHonyaku")
 
 # Load config files
 app.config.from_object("config")
+modules = {
+    "migrate": None
+}
 
 # URI setup
 '''
@@ -19,9 +23,9 @@ app.config["SQLALCHEMY_DATABASE_URI"] = \
 
 # Extension setup (e.g. database)
 db.init_app(app)
+modules["migrate"] = Migrate(app, db)
 
 # Registering the applications blueprints
-# app.register_blueprint(base_views)
 app.register_blueprint(api_v1)
 app.register_blueprint(admin)
 
