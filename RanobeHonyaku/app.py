@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 from views import home
-from api import API
+from api.v1 import api_v1
 from epub import epub
 from admin import admin
 from utils import setup_file
@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 
 # Registering the applications blueprints
 app.register_blueprint(home)
-app.register_blueprint(API)
+app.register_blueprint(api_v1)
 app.register_blueprint(admin)
 app.register_blueprint(epub)
 
