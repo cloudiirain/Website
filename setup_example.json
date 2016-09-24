@@ -4,5 +4,6 @@
   "TWITTER": "#",
   "FACEBOOK": "#",
   "REDDIT": "#",
-  "DISCORD": ""
+  "DISCORD": "",
+  "SQLALCHEMY_DATABASE_URI": "postgresql://localhost/ranobe_dev"
 }
