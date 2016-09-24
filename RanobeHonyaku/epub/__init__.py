@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 epub = Blueprint("epub", __name__, subdomain="epub")
 

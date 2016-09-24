@@ -1,8 +1,5 @@
 from app import db
 
-"""
-A chapter from a novel series
-"""
 class Chapter(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), unique=True)
