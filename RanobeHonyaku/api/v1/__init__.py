@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect, jsonify
 from flask_restful import Api
 
-from RanobeHonyaku.api.v1.resources.series import SeriesDetail, SeriesList
+from .resources.series import SeriesDetail, SeriesList
 from RanobeHonyaku.utils import setup_file
 
 # Set up Flask-RESTful and add resources

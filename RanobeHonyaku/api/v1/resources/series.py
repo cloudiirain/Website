@@ -3,7 +3,7 @@ from flask_restful import Resource, abort, marshal_with, fields
 
 from RanobeHonyaku.database import db
 from RanobeHonyaku.models import Series
-from RanobeHonyaku.api.v1.resources.chapter import chapter_list_fields
+from .chapter import chapter_list_fields
 
 # fields to serialize when a single series is requested
 series_detail_fields = {
