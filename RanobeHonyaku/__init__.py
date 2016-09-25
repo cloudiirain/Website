@@ -4,11 +4,13 @@ from flask_migrate import Migrate
 from RanobeHonyaku.database import db
 from RanobeHonyaku.api.v1 import api_v1
 from RanobeHonyaku.admin import admin
+from RanobeHonyaku.utils import setup_file
 
 app = Flask("RanobeHonyaku")
 
 # Load config files
-app.config.from_object("config")
+app.config["SECRET_KEY"] = setup_file["SECRET_KEY"]
+app.config["SQLALCHEMY_DATABASE_URI"] = setup_file["SQLALCHEMY_DATABASE_URI"]
 
 # Extension setup (e.g. database)
 db.init_app(app)

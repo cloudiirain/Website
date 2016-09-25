@@ -12,7 +12,7 @@ api.add_resource(SeriesList, "/series")
 
 
 # This is the base for the API; Will redirect to our Github organisation page so it always links to latest documentation
-@api_v1.route(rule="")
+@api_v1.route("/")
 def root():
     return redirect(setup_file["GITHUB"], 301)
 

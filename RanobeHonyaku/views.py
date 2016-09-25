@@ -26,12 +26,12 @@ def error_403_forbidden(e):
 
 
 # The root of the domain
-@app.route(rule="/")
+@app.route("/")
 def index():
     return render_template("home.html", setup_file=setup_file)
 
 
 # The route for our page of approved applications
-@app.route(rule="/applications")
+@app.route("/applications")
 def applications():
     return render_template("applications.html", setup_file=setup_file, applications=apps)
