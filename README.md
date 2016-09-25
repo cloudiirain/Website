@@ -3,6 +3,7 @@ The Ranobe-Honyaku website source code.
 
 # Installation
 * Make sure you have python3, setting up a virtualenv is strongly recommended
+* Install postgresql. Create a db for this project and modify config.py URI for the database
 * pip install -r requirements.txt
 * Make sure you have a setup.json -- copy setup_example.json if you don't have one
 * Make sure you have a config.py -- copy config_example.py if you don't have one

@@ -9,21 +9,10 @@ app = Flask("RanobeHonyaku")
 
 # Load config files
 app.config.from_object("config")
-modules = {
-    "migrate": None
-}
-
-# URI setup
-'''
-app.config["SQLALCHEMY_DATABASE_URI"] = \
-        "postgresql://{}:{}@{}:{}/{}".format(app.config["DB_USERNAME"], app.config["DB_PASSWORD"],
-                                             app.config["DB_HOSTNAME"], app.config["DB_PORT"],
-                                             app.config["DB_DATABASE"])
-'''
 
 # Extension setup (e.g. database)
 db.init_app(app)
-modules["migrate"] = Migrate(app, db)
+Migrate(app, db)
 
 # Registering the applications blueprints
 app.register_blueprint(api_v1)

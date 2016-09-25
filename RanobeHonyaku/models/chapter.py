@@ -3,7 +3,7 @@ from RanobeHonyaku.database import db
 class Chapter(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), unique=True)
-    body = db.Column(db.Text)
+    body = db.Column(db.String(1000000))
 
     series_id = db.Column(db.Integer, db.ForeignKey('series.id'))
 
