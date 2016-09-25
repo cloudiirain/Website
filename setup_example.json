@@ -5,5 +5,5 @@
   "FACEBOOK": "#",
   "REDDIT": "#",
   "DISCORD": "",
-  "SQLALCHEMY_DATABASE_URI": "postgresql://localhost/ranobe_dev"
+  "SQLALCHEMY_DATABASE_URI": "postgresql://ranobe_usr:password@localhost:5432/ranobe_dev"
 }
