@@ -36,9 +36,10 @@ class SeriesDetail(Resource):
             abort(404)
 
         # validation, sanitization, and committing
-        if not request.json or not 'title' in request.json:
+        try:
+            series.title = request.json['title']
+        except KeyError:
             abort(400)
-        series.title = request.json['title']
         db.session.commit()
 
         return series
@@ -66,9 +67,10 @@ class SeriesList(Resource):
     @marshal_with(series_detail_fields)
     def post(self):
         # validation and sanitization
-        if not request.json or not 'title' in request.json:
+        try:
+            title = request.json['title']
+        except KeyError:
             abort(400)
-        title = request.json['title']
 
         # need to check if series already exists before adding
 

@@ -6,5 +6,7 @@ class Series(db.Model):
 
     chapters = db.relationship("Chapter", backref="series", lazy="dynamic")
 
-    def __repr__(self):
-        return '<Series %r>' % self.title
+    def __str__(self):
+        return "<Series {}>".format(self.title)
+
+    __repr__ = __str__

@@ -21,6 +21,6 @@ app.register_blueprint(api_v1)
 app.register_blueprint(admin)
 
 # Error handlers and base application routes
-# Technically a circular import, but this design pattern is recommended by flask docs (and works)
-# http://flask.pocoo.org/docs/0.11/patterns/packages/
+# Technically a circular import, but this design pattern is recommended
+# by flask docs: http://flask.pocoo.org/docs/0.11/patterns/packages/
 import RanobeHonyaku.views

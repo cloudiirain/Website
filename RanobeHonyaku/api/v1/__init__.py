@@ -28,8 +28,10 @@ class APIError(Exception):
         self.status_code = status_code
 
     def format_to_dict(self):
-        return {"message": self.message,
-                "error": self.status_code}
+        return {
+            "message": self.message,
+            "error": self.status_code
+        }
 
 
 # Handles all errors that involve the API; Will return an error message and the response code

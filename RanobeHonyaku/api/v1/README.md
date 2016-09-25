@@ -1,7 +1,8 @@
-### /api/v1/series ###
+### /api/v1/series
 
-GET
-~~~~
+#### GET
+
+```
 HTTP/1.0 200 OK
 Content-Type: application/json
 Content-Length: 230
@@ -22,16 +23,20 @@ Date: Sat, 24 Sep 2016 17:50:12 GMT
         "title": "Meepah womp womp womp!"
     }
 ]
-~~~~
+```
 
-POST
-```echo '{"title": "Rawwwwrr2r!"}' | curl -i -d @- http://localhost:5000/api/v1/series --header "Content-Type:application/json"````
+#### POST
+
+```shell
+echo '{"title": "Rawwwwrr2r!"}' | curl -i -d @- http://localhost:5000/api/v1/series --header "Content-Type:application/json"
+````
 
 
-### /api/v1/series/(series_id) ###
+### /api/v1/series/(series_id)
 
-GET
-~~~~
+#### GET
+
+```
 HTTP/1.0 200 OK
 Content-Type: application/json
 Content-Length: 59
@@ -43,10 +48,16 @@ Date: Sat, 24 Sep 2016 17:23:54 GMT
     "id": 2,
     "title": "OreImo"
 }
-~~~~
+```
 
-PUT
-```echo '{"title": "Edit this plz!"}' | curl -i -X PUT -d @- http://localhost:5000/api/v1/series/4 --header "Content-Type:application/json"````
+#### PUT
 
-DELETE
-```curl -X DELETE http://localhost:5000/api/v1/series/6 --header "Content-Type:application/json"```
+```shell
+echo '{"title": "Edit this plz!"}' | curl -i -X PUT -d @- http://localhost:5000/api/v1/series/4 --header "Content-Type:application/json"
+````
+
+#### DELETE
+
+```shell
+curl -X DELETE http://localhost:5000/api/v1/series/6 --header "Content-Type:application/json"
+```
