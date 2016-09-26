@@ -6,11 +6,13 @@ from RanobeHonyaku.api.v1 import api_v1
 from RanobeHonyaku.admin import admin
 from RanobeHonyaku.utils import setup_file
 
+
 app = Flask("RanobeHonyaku")
 
 # Load config files
-app.config["SECRET_KEY"] = setup_file["SECRET_KEY"]
-app.config["SQLALCHEMY_DATABASE_URI"] = setup_file["SQLALCHEMY_DATABASE_URI"]
+app.config["SECRET_KEY"] = setup_file["SETUP"]["SECRET_KEY"]
+app.config["SQLALCHEMY_DATABASE_URI"] = setup_file["SETUP"]["SQLALCHEMY_DATABASE_URI"]
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Extension setup (e.g. database)
 db.init_app(app)

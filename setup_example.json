@@ -1,9 +1,13 @@
 {
-  "GITHUB": "https://github.com/Ranobe-Honyaku",
-  "SECRET_KEY": "Your secret key here",
-  "TWITTER": "#",
-  "FACEBOOK": "#",
-  "REDDIT": "#",
-  "DISCORD": "",
-  "SQLALCHEMY_DATABASE_URI": "postgresql://localhost/ranobe_dev"
+  "SOCIAL":{
+    "GITHUB": "https://github.com/Ranobe-Honyaku",
+    "TWITTER": "#",
+    "FACEBOOK": "#",
+    "REDDIT": "#",
+    "DISCORD": "https://discord.gg/Suqyn9k"
+  },
+  "SETUP": {
+    "SQLALCHEMY_DATABASE_URI": "postgresql://username:password@localhost:port/DatabaseName",
+    "SECRET_KEY": "Insert secret key here"
+  }
 }
