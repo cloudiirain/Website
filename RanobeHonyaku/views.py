@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, redirect
 
 from RanobeHonyaku.utils import setup_file, apps
 from RanobeHonyaku import app
@@ -35,3 +35,9 @@ def index():
 @app.route("/applications")
 def applications():
     return render_template("applications.html", setup_file=setup_file, applications=apps)
+
+
+# The route that redirects to our Github org
+@app.route("/api")
+def redirect_to_github():
+    return redirect(setup_file["SOCIAL"]["GITHUB"], 301)
